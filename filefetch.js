@@ -1,5 +1,5 @@
-
 function readFile(input) {
+  if (/\.(pdf)$/i.test(file.name)){
     let file = input.files[0];
     alert(file.name)
     let reader = new FileReader();
@@ -13,6 +13,5 @@ function readFile(input) {
     reader.onerror = function() {
       console.log(reader.error);
     };
-  
-  }
-  
+  }   
+}
