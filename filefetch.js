@@ -1,18 +1,20 @@
-function readFile(input) {
-  if (/\.(pdf)$/i.test(file.name)){
+const form = document.getElementById("form");
+const inputFile = document.getElementById("file");
+const formData = new FormData();
 
-    let reader = new FileReader();
-  
-    reader.readAsDataURL(file);
-  
-    reader.onload = function() {
-      console.log(reader.result);
-    };
-  
-    reader.onerror = function() {
-      console.log(reader.error);
-    };
+const handleSubmit = (event) => {
+  event.preventDefault();
+    for (const file of inputFile.files) {
+        formData.append("files", file);
+    }
 
-   }   
+    console.log(formData);
 
-}
+    fetch("http://localhost:8080/files", {
+        method: "post",
+        body: formData,
+    }).catch((error) => ("Something went wrong!", error)).finally(() => {
+      formData.delete("files");});
+};
+
+form.addEventListener("submit", handleSubmit);
