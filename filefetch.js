@@ -1,7 +1,7 @@
 function readFile(input) {
-  if (/\.(pdf)$/i.test(file.name)){
+  //if (/\.(pdf)$/i.test(file.name)){
     let file = input.files[0];
-    alert(file.name)
+    //alert(file.name)
     let reader = new FileReader();
   
     reader.readAsDataURL(file);
@@ -13,5 +13,9 @@ function readFile(input) {
     reader.onerror = function() {
       console.log(reader.error);
     };
-  }   
+  // }   
 }
+
+// function {
+//  if upload.
+// }
