@@ -49,9 +49,7 @@
     
     <div class="container p-5 my-5 bg-light border rounded">
         <h4>Login</h4><br>
-        <form action="" class="needs-validated" novalidate  id="login" method="post">
-        
-            <form>
+        <form class="needs-validated" novalidate id="login" method="post">
                 <div class="mb-3 mt-3">
                   <label for="email" class="form-label">Email:</label>
                   <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
@@ -83,7 +81,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <form class="row g-3" novalidate>
+                    <form id="register" class="row g-3" novalidate>
                       <div class="col-md-12">
                         <label for="inputNaam" class="form-label">Naam</label>
                         <input type="name" class="form-control" id="inputNaam" placeholder="Volledige Naam" required>
@@ -123,6 +121,7 @@
                       </div>
                     </form>
                     <script src="handlelogin.js"></script>
+                    <script src="handleregister.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
                     </script>
                     <script>
