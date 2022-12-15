@@ -1,12 +1,12 @@
-const form = document.getElementById("login");
+const loginForm = document.getElementById("login");
 
-const handleSubmit = (event) => {
+const handleLoginSubmit = (event) => {
   // Prevent page from refreshing
   event.preventDefault();
 
   // Extract e-mail and password from form
-  const email = form.elements["email"].value;
-  const password = form.elements["pwd"].value;
+  const email = loginForm.elements["email"].value;
+  const password = loginForm.elements["pwd"].value;
   console.log(email, password);
 
   // Create link to send post request to
@@ -33,4 +33,4 @@ const handleSubmit = (event) => {
     });
 };
 
-form.addEventListener("submit", handleSubmit);
+loginForm.addEventListener("submit", handleLoginSubmit);
