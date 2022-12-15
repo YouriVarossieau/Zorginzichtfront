@@ -1,6 +1,6 @@
 // Initialize customer fetch function
 const customerfetch = (id) => {
-    fetch(`https://localhost:7104/api/customers/${id}`)
+    fetch(`https://zi-webapp.azurewebsites.net/api/customers/${id}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -21,4 +21,4 @@ const customerfetch = (id) => {
   }
   
   // Fetch and show customer with the ID of 1
-  customerfetch(1);
+  customerfetch(localStorage.getItem("uid"));
