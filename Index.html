@@ -84,13 +84,9 @@
                   </div>
                   <div class="modal-body">
                     <form class="row g-3" novalidate>
-                      <div class="col-md-6">
-                        <label for="inputVoornaam" class="form-label">Voornaam</label>
-                        <input type="name" class="form-control" id="inputVoornaam" placeholder="Vooraam" required>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="inputAchternaam" class="form-label">Achternaam</label>
-                        <input type="name" class="form-control" id="inputAchternaam" placeholder="Achternaam" required>
+                      <div class="col-md-12">
+                        <label for="inputNaam" class="form-label">Naam</label>
+                        <input type="name" class="form-control" id="inputNaam" placeholder="Volledige Naam" required>
                       </div>
                       <div class="col-12">
                         <label for="inputAddress" class="form-label">E-mail</label>
@@ -107,10 +103,6 @@
                       <div class="col-md-6">
                         <label for="inputZip" class="form-label">Postcode</label>
                         <input type="text" class="form-control" id="inputpostcode" placeholder="Postcode"required>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="inputState" class="form-label">Geboortedatum</label>
-                        <input type="date" id="inputDatum" class="form-control">
                       </div>
                       <div class="col-md-12 ">
                         <div class="form-check">
@@ -139,15 +131,15 @@
 
                           let password=$('#password').val();
                           let confirm_password=$('#confirmpassword').val();
-                          let button = document.getElementById('myButton')
+                        
 
                           if(password===""){
                               $('.confirm-message').text("Wachtwoord veld mag niet leeg zijn.").addClass('error-message');
-                              event.preventDefault();
+                              
                           }
                           else if(confirm_password===""){
                               $('.confirm-message').text("Wachtwoord Controle veld mag niet leeg zijn.").addClass('error-message');
-                              button.display('False');
+                              
                           }
                           else if(confirm_password===password)
                           {
@@ -156,22 +148,11 @@
                           }
                           else{
                               $('.confirm-message').text("Wachtwoord komt niet overeen.").addClass('error-message');
-                              event.preventDefault();
+                              
                           
                           }
 
                         });
-
-                        var button = document.getElementById('myButton')
-                        var bsButton = new bootstrap.Button(button)
-                        
-                        buttons.forEach(function (button) {
-                          var button = new bootstrap.Button(button)
-                          button.toggle()
-                        })
-                        .error-message {
-
-                        }
 
                     </script>
                   
