@@ -49,9 +49,9 @@
     
     <div class="container p-5 my-5 bg-light border rounded">
         <h4>Login</h4><br>
-        <form action="" class="needs-validated" novalidate>
+        <form action="" class="needs-validated" novalidate  id="login" method="post">
         
-            <form action="/userpage.html">
+            <form>
                 <div class="mb-3 mt-3">
                   <label for="email" class="form-label">Email:</label>
                   <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
@@ -66,7 +66,7 @@
                   </label>
                 </div>
                 <button type="submit" class="btn btn-primary">Inloggen</button>
-              </form> 
+              </form>
               <div class="small mt-2">
                 <button type="button" class="btn btn-clear btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   Nog geen account account? Registreer nu
@@ -122,6 +122,7 @@
                         <button type="submit" id="myButton" class="btn btn-primary">Aanmaken</button>
                       </div>
                     </form>
+                    <script src="handlelogin.js"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
                     </script>
                     <script>
