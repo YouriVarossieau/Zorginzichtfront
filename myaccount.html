@@ -1,80 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyAccount</title>
-    <script src="customeridfetch.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="#"></script>
-</head>
-<body>
-    <div class="container mt-5 border bg-light rounded">
-        <div class="d-flex ">
-            <div class="col-sm-4 mt-3 mb-3 pl-">
-                
-                <div class="card" style="width:250px; height:300px">
-                    <img class="card-img-top" src="https://www.zorgvoorbeter.nl/zorgvoorbeter/media/images/nieuws/dementie-tips.jpg" alt="Card image">
-                    <div class="card-body">
-                      <h4 class="card-title"></h4>
-                      <p class="card-text"></p>
-                     
-                    </div>
-                  </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>MyAccount</title>
+		<script src="customeridfetch.js"></script>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="#"></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/index.html">Logo</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#mynavbar"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mynavbar">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="/index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/uploadpage.html">Facturen</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/myaccount.html">Mijn account</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container mt-5 border bg-light rounded">
+			<div class="d-flex">
+				<div class="col-sm-4 mt-3 mb-3 pl-">
+					<div class="card" style="width: 250px; height: 300px">
+						<img
+							class="card-img-top"
+							src="https://www.zorgvoorbeter.nl/zorgvoorbeter/media/images/nieuws/dementie-tips.jpg"
+							alt="Card image"
+						/>
+						<div class="card-body">
+							<h4 class="card-title"></h4>
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+				<div class="container mt-3 mb-3 bg-light">
+					<div class="col-sm-11">
+						<div class="container mt-3">
+							<table class="table table-borderless text-middle">
+								<thead>
+									<th>Uw persoonlijke Gegevens</th>
+								</thead>
 
-            </div>
-            <div class="container mt-3 mb-3 bg-light">
-            <div class="col-sm-11">
-                
-                <div class="container mt-3">
-                    
-                                
-                    <table class="table table-borderless text-middle">
-                      <thead>
-                        <th>Persoonlijke Gegevens</th>
-                      </thead>
-                    
-                      <tbody>
-                        <tr>
-                          <td>Klantnummer</td>
-                          <td id="customernum"></td>
-                        </tr>
-                        <tr>
-                          <td>Naam</td>
-                          <td id="customername"></td>
-                        </tr>
-                        <tr>
-                          <td>Adres</td>
-                          <td id="adrress"></td>
-                        </tr>
-                        <tr>
-                        <tr>
-                          <td>E-mail</td>
-                          <td id="email">*******@gmail.com</td>
-                        </tr>
+								<tbody>
+									<tr>
+										<td>Klantnummer</td>
+										<td id="customernum"></td>
+									</tr>
+									<tr>
+										<td>Naam</td>
+										<td id="customername"></td>
+									</tr>
+									<tr>
+										<td>Adres</td>
+										<td id="address"></td>
+									</tr>
+									<tr></tr>
+									<tr>
+										<td>E-mail</td>
+										<td id="email"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container border mt-4 bg-light">
+			<div style="display: flex; flex-direction: column">
+				<h2 class="mt-2">Uw huidige polis</h2>
+				<div class="col-sm-6">
+					<table class="table table-borderless text-middle">
+						<thead>
+							<th>Informatie over uw huidige polis</th>
+						</thead>
 
-                      </tbody>
-                    </table>     
-            </div>
-          </div>
-        </div>
-    </div>
-</div>
-<body>
-  <div class="container border mt-3 bg-light">
-      <h2 class="mt-2">Zorg Overzicht</h2>
-      <div class="row">
-          <div class="col-md-6">
-              <h5 class="mt-4">Data Table</h3>
-              <table class="table table-bordered">
-                  <thead>
-                      <tr>
-                          <th>Zorgtype</th>
-                          <th>Kosten</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-</body>
+						<tbody>
+							<tr>
+								<td>Verzekering</td>
+								<td id="policyName"></td>
+							</tr>
+							<tr>
+								<td>Soort</td>
+								<td id="policyKind"></td>
+							</tr>
+							<tr>
+								<td>Actieve polis</td>
+								<td id="active"></td>
+							</tr>
+							<tr></tr>
+							<tr>
+								<td>Kosten basisverzekering</td>
+								<td id="kosten"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="container border mt-3 bg-light">
+			<div class="col-4 mt-2">
+				<h5>Uw huidige aanvullende verzekeringen</h5>
+				<div id="additional"></div>
+			</div>
+		</div>
+
+		<div class="container border mt-3 bg-light">
+			<div class="col-5 mt-3">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Totalen</h4>
+						<table class="table table-borderless">
+							<thead>
+								<tr>
+									<th>Type</th>
+									<th>Kosten</th>
+								</tr>
+							</thead>
+							<tbody id="sumTable"></tbody>
+
+							<tbody id="baseIns"></tbody>
+						</table>
+						<h3 id="totalCosts"></h3>
+					</div>
+				</div>
+				<br />
+			</div>
+			<div>
+				<a
+					role="button"
+					class="btn btn-success"
+					style="width: 100%; font-size: larger"
+					href="/uploadpage.html"
+				>
+					Upload hier je facturen en wij doen de rest!
+				</a>
+			</div>
+			<br />
+		</div>
+
+		<!-- Footer -->
+		<footer class="text-center text-lg-start bg-white text-muted">
+			<!-- Section: Social media -->
+			<section
+				class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+			>
+				<!-- Left -->
+				<div class="me-5 d-none d-lg-block"></div>
+				<!-- Left -->
+
+				<!-- Right -->
+				<div>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-google"></i>
+					</a>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-linkedin"></i>
+					</a>
+					<a href="" class="me-4 link-secondary">
+						<i class="fab fa-github"></i>
+					</a>
+				</div>
+				<!-- Right -->
+			</section>
+			<!-- Section: Social media -->
+
+			<!-- Section: Links  -->
+			<section class="">
+				<div class="container text-center text-md-start mt-5">
+					<!-- Grid row -->
+					<div class="row mt-3">
+						<!-- Grid column -->
+						<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+							<!-- Content -->
+							<h6 class="text-uppercase fw-bold mb-4">Zorginzicht</h6>
+							<p>
+								Deze website is gemaakt zodat u inzicht kan krijgen in uw
+								zorgkosten. U kunt uw facturen uploaden en zo een overzicht
+								krijgen wat u dit jaar aan kosten moet betalen. Daarnaast
+								berekenen wij welke aanvullende verzekeringen u nodig heeft, of
+								juist misschien niet meer nodig heeft.
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+							<!-- Links -->
+							<h6 class="text-uppercase fw-bold mb-4">Partners</h6>
+							<p>
+								<a href="https://www.centraalbeheer.nl/" class="text-reset"
+									>Centraal Beheer</a
+								>
+							</p>
+							<p>
+								<a
+									href="https://www.zilverenkruis.nl/consumenten"
+									class="text-reset"
+									>Zilveren Kruis</a
+								>
+							</p>
+							<p>
+								<a href="https://www.interpolis.nl/" class="text-reset"
+									>Interpolis</a
+								>
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+							<!-- Links -->
+							<h6 class="text-uppercase fw-bold mb-4">Uw gegevens</h6>
+							<p>
+								<a href="/index.html" class="text-reset">Home</a>
+							</p>
+							<p>
+								<a href="/index.html" class="text-reset">Login</a>
+							</p>
+							<p>
+								<a href="/userpage" class="text-reset">Mijn account</a>
+							</p>
+							<p>
+								<a href="/uploadpage" class="text-reset">Facturen uploaden</a>
+							</p>
+						</div>
+						<!-- Grid column -->
+
+						<!-- Grid column -->
+						<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+							<!-- Links -->
+							<h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+							<p>
+								<i class="fas fa-home me-3 text-secondary"></i> Laan van
+								Malkenschoten 20
+							</p>
+							<p>
+								<i class="fas fa-envelope me-3 text-secondary"></i>
+								info@zorginzicht.com
+							</p>
+							<p>
+								<i class="fas fa-phone me-3 text-secondary"></i> 7333 NP
+								Apeldoorn
+							</p>
+							<p>
+								<i class="fas fa-print me-3 text-secondary"></i> 055-5799111
+							</p>
+						</div>
+						<!-- Grid column -->
+					</div>
+					<!-- Grid row -->
+				</div>
+			</section>
+			<!-- Section: Links  -->
+
+			<!-- Copyright -->
+			<div
+				class="text-center p-4"
+				style="background-color: rgba(0, 0, 0, 0.025)"
+			>
+				© 2022 Copyright:
+				<a class="text-reset fw-bold" href="http://127.0.0.1:8080/"
+					>zorginzicht.nl</a
+				>
+			</div>
+			<!-- Copyright -->
+		</footer>
+		<!-- Footer -->
+	</body>
 </html>
