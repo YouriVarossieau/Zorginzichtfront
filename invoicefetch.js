@@ -1,5 +1,5 @@
 const invoicesSum = (customerId) => {
-    fetch(`http://localhost:5000/api/sum_per_caretype/${customerId}`)
+    fetch(`https://zorginzicht4.azurewebsites.net/api/sum_per_caretype/${customerId}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -11,10 +11,20 @@ function showSum(data) {
     let sum = "";
 
     data.map((data) => {
-        sum += `<div> <p> Totaal: ${data.total} </p> </div>`;
+        sum += `
+    <tr>
+    <td>
+        ${data.caretype}
+    </td>
+    <td>
+        ${data.total}
+    </td>
+    </div>
+    </tr>
+        `;
     });
     // Setting innerHTML as tab variable
-    document.getElementById("sum").innerHTML = sum;
+    document.getElementById("sumCare").innerHTML = sum;
 }
 
 invoicesSum(1);
@@ -25,7 +35,7 @@ invoicesSum(1);
 
 
 const invoicesfetch = (id) => {
-    fetch(`http://127.0.0.1:5000/api/invoices/${id}`)
+    fetch(`https://zorginzicht4.azurewebsites.net/api/invoices/${id}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -43,7 +53,20 @@ function show(data) {
 
     data.map((invoice) => {
         code += `
-   <div> <p> ${invoice.amount} </p> </div>
+        <tr>
+            <td>
+                ${invoice.invoice_number}
+            </td>
+            <td>
+                ${invoice.caretype}
+            </td>
+            <td>
+                ${invoice.invoice_date}
+            </td>
+            <td>
+                ${invoice.amount}
+            </td>
+        </tr>
    `;
     });
 
