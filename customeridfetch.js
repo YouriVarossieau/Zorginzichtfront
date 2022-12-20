@@ -59,6 +59,8 @@ function showPolicy(policy) {
 		totalCostsAdd += add.costs;
 		console.log(totalCostsAdd);
 		document.getElementById("additional").innerHTML = test;
+
+
 	});
 
 	let sumTable = "";

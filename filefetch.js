@@ -7,10 +7,10 @@ const handleSubmit = (event) => {
     for (const file of inputFile.files) {
         formData.append("files", file);
     }
-
+    
     console.log(formData);
 
-    fetch("http://localhost:8080/files", {
+    fetch(`http://localhost:8080/files`, {
         method: "post",
         body: formData,
     }).catch((error) => ("Something went wrong!", error)).finally(() => {
