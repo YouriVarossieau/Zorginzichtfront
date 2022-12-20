@@ -46,7 +46,7 @@ function showPolicy(policy) {
 
 	policy.additional_insurances.map((add) => {
 		test += `
-    <tr>
+    	<tr>
 		<td> 
 			<b> ${add.name}* </b> 
 		</td>
@@ -60,7 +60,7 @@ function showPolicy(policy) {
 		console.log(totalCostsAdd);
 		document.getElementById("additional").innerHTML = test;
 
-
+		
 	});
 
 	let sumTable = "";
