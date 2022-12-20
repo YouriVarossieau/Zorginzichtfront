@@ -88,17 +88,3 @@ function showPolicy(policy) {
 // Fetch and show customer with the ID of 1
 customerfetch(localStorage.getItem("uid"));
 policyFetch(localStorage.getItem("uid"));
-
-// policy.map((data) => {
-// 	sum += `
-//   <tr>
-//   <td>
-//       ${data.caretype}
-//   </td>
-//   <td>
-//       ${data.total}
-//   </td>
-//   </div>
-//   </tr>
-//       `;
-// });
