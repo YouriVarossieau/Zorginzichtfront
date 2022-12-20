@@ -8,7 +8,7 @@ const customerfetch = (id) => {
 		});
 };
 
-// Initialize customer fetch function
+// Initialize policy fetch function on customer id
 const policyFetch = (id) => {
 	fetch(`https://zi-webapp.azurewebsites.net/api/policybycustomerid/${id}`)
 		.then((response) => response.json())
@@ -27,7 +27,7 @@ function show(customer) {
 	document.getElementById("email").innerHTML = customer.email;
 	document.getElementById("customernum").innerHTML = customer.customer_number;
 	document.getElementById("address").innerHTML =
-		customer.address + ` ` + customer.postal_code + ` ` + customer.city;
+		customer.address + `, ` + customer.postal_code + ` ` + customer.city;
 }
 
 // Initialize policy show function
@@ -46,8 +46,16 @@ function showPolicy(policy) {
 
 	policy.additional_insurances.map((add) => {
 		test += `
-    <p> Aanvullende verzekering: ${add.name}</p>
-    <p> Kosten: €${add.costs},- per maand</p>`;
+    <tr>
+		<td> 
+			<b> ${add.name}* </b> 
+		</td>
+    	<td>  
+		€${add.costs},- per maand 
+		</td>
+<tr><td colspan="2"> <div style="background-color:white"> Uitgebreide dekking voor uw ${
+			add.name == "Tand 1" ? "tandarts" : "fysiotherapeutische"
+		} kosten </div> </td></tr>`;
 		totalCostsAdd += add.costs;
 		console.log(totalCostsAdd);
 		document.getElementById("additional").innerHTML = test;
@@ -62,7 +70,7 @@ function showPolicy(policy) {
     </td>
     <td>
         €${add.costs}
-    <tr>
+    </td>
         `;
 		document.getElementById("sumTable").innerHTML = sumTable;
 	});
