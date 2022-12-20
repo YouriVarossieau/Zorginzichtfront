@@ -27,7 +27,7 @@ function showSum(data) {
 	document.getElementById("sumCare").innerHTML = sum;
 }
 
-invoicesSum(1);
+invoicesSum(localStorage.getItem("uid"));
 
 const invoicesfetch = (id) => {
 	fetch(`https://pythonbk.azurewebsites.net/api/invoices/${id}`)
