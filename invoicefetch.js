@@ -55,7 +55,7 @@ function show(data) {
         code += `
         <tr>
             <td>
-                ${invoice.invoice_number}
+                ${invoice.invoice_nr}
             </td>
             <td>
                 ${invoice.caretype}
