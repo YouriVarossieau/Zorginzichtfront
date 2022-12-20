@@ -12,6 +12,7 @@
 		/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="invoicefetch.js"></script>
+<script src="suggestionfetch.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <div class="bg-light">
@@ -149,11 +150,56 @@
         </div>
         <div class="container collapse p-5 my-5 bg-light border rounded" id="suggestionResult" data-bs-toggle="offcanvas">
           <div class="row">
-            <div class="col-12">
-              kei mooi dit
+            <div class="col-8">
+              <h4>
+                Suggestie
+              </h4>
+              <div class="col-12">
+                <div class="small text-left mt-4">
+                  Bekijk hier onder jouw suggestie*.<br> 
+                  Deze suggestie is gebaseerd op de door jou geuploade facturen.
+                </div>
+              </div>
             </div>
-
           </div>
+            <div class="row">
+              <div class="col-7">
+                <table class="table table-borderless mt-4">
+                  <thead>
+                    <th>
+                      Type
+                    </th>
+                    <th>
+                      Dekking
+                    </th>
+                    <th>
+                      Kosten
+                    </th>
+                  </thead>
+                <tbody id="suggestion"></tbody>
+                </table>
+              </div>
+              <div class="col-5">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Huidige aanvullende verzekeringing:</h4>
+                    <table class="table table-borderless">
+                    <thead>
+                    <tr>
+                        <Th>
+                          Type
+                        </Th>
+                        <th>
+                          Kosten
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody id="additional"></tbody>
+                    </table>
+                  </div>
+                </div> 
+              </div>
+            </div>
 
           </div>
      <!-- Footer -->

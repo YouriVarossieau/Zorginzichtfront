@@ -39,7 +39,7 @@ const invoicesfetch = (id) => {
 };
 
 // Calling that async function
-invoicesfetch(1);
+invoicesfetch(localStorage.getItem("uid"));
 
 // Function to define innerHTML for HTML table
 function show(data) {
