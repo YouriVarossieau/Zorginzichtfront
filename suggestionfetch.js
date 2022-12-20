@@ -9,10 +9,10 @@ const suggestfetch = (id) => {
 };
 
 function checkIfText(p) {
-	if (!p.additional_insurance) {
+	if (!p.additional_insurance && p !== "Please contact us for advice.") {
 		return "U kunt uw overige aanvullende verzekeringen behouden";
 	} else {
-		return "";
+		return "Geen suggestie beschikbaar o.b.v deze gegevens. Neem contact met ons op voor een beter advies.";
 	}
 }
 function showSugText(data) {
