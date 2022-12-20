@@ -10,7 +10,8 @@ const handleSubmit = (event) => {
     
     console.log(formData);
 
-    fetch(`http://localhost:8080/files`, {
+    const uid =  localStorage.getItem("uid");
+    fetch(`https://pythonbk.azurewebsites.net/upload_file/${uid}`, {
         method: "post",
         body: formData,
     }).catch((error) => ("Something went wrong!", error)).finally(() => {
