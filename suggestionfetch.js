@@ -46,7 +46,14 @@ function showSug(data) {
        ${add.coverage ? add.coverage : ""}
     </td>
     <td>
-        ${add.price ? `€ ${add.price}` : ""}
+        ${
+          add.price
+            ? `${new Intl.NumberFormat("nl-NL", {
+                style: "currency",
+                currency: "EUR",
+              }).format(add.price)}`
+            : ""
+        }
     </td>
     </div>
     </tr>
