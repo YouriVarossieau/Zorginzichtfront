@@ -1,66 +1,63 @@
+const isStringArray = (object) => {
+  const bool = object.length > 0 && typeof object[0] === "string";
+  return bool;
+};
+
 const suggestfetch = (id) => {
   fetch(`https://pythonbk.azurewebsites.net/api/suggest/${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      const results = data.results;
+      if (isStringArray(results)) return showSugText(data.results);
+
       showSug(data.results);
-      showSugText(data.results);
     });
 };
 
-// function checkIfText(p) {
-// 	if (!p.additional_insurance && p !== "Please contact us for advice.") {
-// 		return "U kunt uw overige aanvullende verzekeringen behouden";
-// 	} else {
-// 		return "Geen suggestie beschikbaar o.b.v deze gegevens. Neem contact met ons op voor een beter advies.";
-// 	}
-// }
 function showSugText(data) {
   let sugText = "";
+  let sugTable = "";
 
-  // ${add.additional_insurance ? add.additional_insurance : add}
   data.map((add) => {
-    sugText += `<p>${add}</p> </br>
-        `;
+    if (typeof add === "string") {
+      sugText += returnString(add);
+    } else {
+      sugTable += returnTable(add);
+    }
   });
+
   document.getElementById("suggestionText").innerHTML = sugText;
+  document.getElementById("suggestion").innerHTML = sugTable;
 }
 
-function showSug(data) {
-  let sug = "";
+const returnTable = (data) => {
+  return `
+  <tr>
+  <td> 
+      ${data.additional_insurance}
+  </td>
+  <td>
+     ${data.coverage ? data.coverage : ""}
+  </td>
+  <td>
+      ${
+        data.price
+          ? `${new Intl.NumberFormat("nl-NL", {
+              style: "currency",
+              currency: "EUR",
+            }).format(data.price)}`
+          : ""
+      }
+  </td>
+  </div>
+  </tr>
+      `;
+};
 
-  // ${add.additional_insurance ? add.additional_insurance : add}
-  // const result = words.filter((word) => word.length > 6);
-  const suggestedIns = data.filter((add) => add.additional_insurance);
-  console.log(suggestedIns);
-  document.getElementById("suggestion").innerHTML = sug;
-
-  suggestedIns.map((add) => {
-    sug += `
-    <tr>
-    <td> 
-        ${add.additional_insurance}
-        
-    </td>
-    <td>
-       ${add.coverage ? add.coverage : ""}
-    </td>
-    <td>
-        ${
-          add.price
-            ? `${new Intl.NumberFormat("nl-NL", {
-                style: "currency",
-                currency: "EUR",
-              }).format(add.price)}`
-            : ""
-        }
-    </td>
-    </div>
-    </tr>
-        `;
-  });
-  document.getElementById("suggestion").innerHTML = sug;
-}
+const returnString = (data) => {
+  return `<p>${data}</p> </br>
+  `;
+};
 
 // Calling that async function
 suggestfetch(localStorage.getItem("uid"));
