@@ -8,13 +8,12 @@ const suggestfetch = (id) => {
     .then((response) => response.json())
     .then((data) => {
       const results = data.results;
-      if (isStringArray(results)) return showSugText(data.results);
-
-      showSug(data.results);
+      console.log(results);
+      return showSuggestions(data.results);
     });
 };
 
-function showSugText(data) {
+function showSuggestions(data) {
   let sugText = "";
   let sugTable = "";
 
